@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>photoKam — Local Photo & Video Indexer</title>
+  <meta name="description" content="A desktop app that indexes, searches, and organizes the photos and videos on your PC. All data stays local." />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <!-- When publishing, just update the values below -->
+  <!-- DOWNLOAD_URL: latest installer (.exe) download link (e.g. GitHub Releases) -->
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top"><span class="logo">pK</span> photoKam</a>
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#shots">Screens</a>
+        <a href="#how">How to</a>
+        <a href="#changelog">Changelog</a>
+        <a href="../" class="lang">KO</a>
+        <a class="btn primary sm" href="#download">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="ver-pill">Latest <strong>v0.4.9</strong></div>
+        <h1>Find, organize, and view<br />the photos & videos on your PC</h1>
+        <p class="lead">
+          A local indexer inspired by digiKam. Skim through hundreds of thousands of files with
+          smooth virtual scrolling, pick them with EXIF search, ratings and flags, and edit them
+          in your favorite external app. <b>All data stays on your computer.</b>
+        </p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#download">Download for Windows</a>
+          <a class="btn ghost" href="#how">See how it works</a>
+        </div>
+        <figure class="shot hero-shot">
+          <img src="../images/01-gallery.png" alt="Gallery main screen"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="ph">[..insert image] images/01-gallery.png</div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section">
+      <div class="wrap">
+        <h2>Features</h2>
+        <div class="grid feats">
+          <div class="card"><div class="ico">⚡</div><h3>Large-scale virtual scroll</h3><p>Hundreds of thousands of items, no memory worries. Loads only what's visible and frees the rest.</p></div>
+          <div class="card"><div class="ico">🔎</div><h3>EXIF search</h3><p>Filter by camera, lens, ISO, aperture, focal length, date, and type — toggled right in the gallery.</p></div>
+          <div class="card"><div class="ico">★</div><h3>Ratings & flags</h3><p>1–5 stars and pick/reject flags for fast culling. Keyboard shortcuts and batch apply.</p></div>
+          <div class="card"><div class="ico">🗓</div><h3>Timeline</h3><p>When sorted by date, a floating label shows the capture month at your scroll position.</p></div>
+          <div class="card"><div class="ico">🎞</div><h3>Video playback</h3><p>Built-in player. Incompatible formats like m2ts are auto-converted to mp4 for playback.</p></div>
+          <div class="card"><div class="ico">🖼</div><h3>Fast lightbox</h3><p>Neighbor preloading for instant next/prev. Wheel zoom, drag pan, EXIF overlay.</p></div>
+          <div class="card"><div class="ico">✎</div><h3>External editor</h3><p>"Edit" opens the original in your chosen app — Photoshop, a video editor, etc.</p></div>
+          <div class="card"><div class="ico">🗂</div><h3>Multi-folder library</h3><p>Bring many folders into one view. Auto incremental scan on startup reflects changes.</p></div>
+          <div class="card"><div class="ico">🔒</div><h3>Fully local</h3><p>Index in a local SQLite DB. No external servers or uploads. Deletes go to the Recycle Bin.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREENSHOTS -->
+    <section id="shots" class="section alt">
+      <div class="wrap">
+        <h2>Screens</h2>
+        <p class="muted">Images below are placeholders. Drop captures into <code>site/images/</code> with the same names to show them.</p>
+        <div class="grid shots">
+          <figure class="shot"><img src="../images/01-gallery.png" alt="Gallery" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph">[..insert image] images/01-gallery.png</div><figcaption>Gallery — virtual scroll grid</figcaption></figure>
+          <figure class="shot"><img src="../images/02-search.png" alt="Search" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph">[..insert image] images/02-search.png</div><figcaption>Search — EXIF filter panel</figcaption></figure>
+          <figure class="shot"><img src="../images/03-lightbox.png" alt="Lightbox" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph">[..insert image] images/03-lightbox.png</div><figcaption>Lightbox — zoom, ratings, filmstrip</figcaption></figure>
+          <figure class="shot"><img src="../images/04-detail.png" alt="Details" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph">[..insert image] images/04-detail.png</div><figcaption>Details — EXIF, ratings, flags</figcaption></figure>
+          <figure class="shot"><img src="../images/05-library.png" alt="Library" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph">[..insert image] images/05-library.png</div><figcaption>Library — folder management, scan</figcaption></figure>
+          <figure class="shot"><img src="../images/06-settings.png" alt="Settings" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph">[..insert image] images/06-settings.png</div><figcaption>Settings — editor, scan, viewer</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW TO -->
+    <section id="how" class="section">
+      <div class="wrap">
+        <h2>How to use</h2>
+        <ol class="steps">
+          <li><b>Install & run</b><span>Download the installer below, install, and launch photoKam.</span></li>
+          <li><b>Add folders</b><span>In <em>Library</em> (bottom-left), add folders containing your photos/videos.</span></li>
+          <li><b>Scan</b><span>Scanning runs in the background (indexing + thumbnails). After that, it auto-scans incrementally on startup.</span></li>
+          <li><b>Browse & search</b><span>Scroll the <em>Gallery</em>, and use <em>🔎 Search</em> at the top to filter.</span></li>
+          <li><b>Cull</b><span>Select photos, then <kbd>1</kbd>–<kbd>5</kbd> for stars, <kbd>P</kbd> pick / <kbd>X</kbd> reject. Double-click to open large.</span></li>
+          <li><b>Edit & organize</b><span>In the lightbox, <em>Edit</em> opens an external editor, <kbd>↻</kbd> rotates, <kbd>Delete</kbd> moves to Recycle Bin.</span></li>
+        </ol>
+        <p class="muted">Shortcuts: <kbd>←</kbd>/<kbd>→</kbd> prev/next · <kbd>0</kbd> reset zoom · <kbd>i</kbd> info · <kbd>Esc</kbd> close</p>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section id="download" class="section alt">
+      <div class="wrap dl">
+        <h2>Download</h2>
+        <p class="lead">Windows 10/11 (64-bit)</p>
+        <a class="btn primary lg" id="dlBtn" href="#">Get photoKam installer (.exe)</a>
+        <p class="muted small">
+          * The download link is connected after release (GitHub Releases recommended).<br />
+          Video features require ffmpeg — set its folder in Settings or put it on your system PATH.
+        </p>
+      </div>
+    </section>
+
+    <!-- CHANGELOG -->
+    <section id="changelog" class="section">
+      <div class="wrap">
+        <h2>Changelog</h2>
+        <p class="muted">Full history is kept in <a href="../CHANGELOG.md">CHANGELOG.md</a>.</p>
+        <ul class="log">
+          <li><b>v0.4.x</b> — Ratings & flags, timeline, optimistic delete, m2ts conversion playback, lightbox preload</li>
+          <li><b>v0.3.x</b> — Gallery & search unified, auto scan on startup, UI cleanup</li>
+          <li><b>v0.2.x</b> — Infinite scroll, rotate, external editor, built-in video player</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <span>© photoKam — local-only photo & video indexer</span>
+      <a href="https://github.com/Sung-gon/PhotoKamIntro">GitHub</a>
+    </div>
+  </footer>
+</body>
+</html>

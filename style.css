@@ -33,6 +33,8 @@ kbd { background: var(--panel); border: 1px solid var(--border); border-bottom-w
 .nav-links { display: flex; align-items: center; gap: 22px; }
 .nav-links a { color: var(--muted); font-size: 14px; }
 .nav-links a:hover { color: var(--text); }
+.nav-links a.lang { border: 1px solid var(--border); border-radius: 6px; padding: 4px 9px; font-weight: 600; font-size: 12px; }
+.nav-links a.lang:hover { border-color: var(--accent); color: var(--accent); }
 
 /* buttons */
 .btn { display: inline-block; border-radius: 8px; padding: 11px 20px; font-size: 15px; font-weight: 600;
