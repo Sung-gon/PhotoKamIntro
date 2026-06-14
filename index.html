@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>photoKam — 로컬 사진·동영상 인덱서</title>
+  <meta name="description" content="내 PC의 사진과 동영상을 빠르게 인덱싱·검색·정리하는 데스크탑 앱. 모든 데이터는 로컬에만 저장됩니다." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 배포 시 아래 값만 바꾸면 됩니다 -->
+  <!-- DOWNLOAD_URL: 최신 설치본(.exe) 다운로드 주소 (예: GitHub Releases) -->
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top"><span class="logo">pK</span> photoKam</a>
+      <nav class="nav-links">
+        <a href="#features">기능</a>
+        <a href="#shots">화면</a>
+        <a href="#how">사용법</a>
+        <a href="#changelog">변경이력</a>
+        <a class="btn primary sm" href="#download">다운로드</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="ver-pill">최신 버전 <strong>v0.4.9</strong></div>
+        <h1>내 PC의 사진·동영상을<br />빠르게 찾고, 정리하고, 본다</h1>
+        <p class="lead">
+          digiKam에서 영감을 받은 로컬 인덱서. 수십만 장도 매끄러운 가상 스크롤로 훑고,
+          EXIF 검색·별점·플래그로 고르고, 외부 편집기로 바로 보정합니다.
+          <b>모든 데이터는 내 컴퓨터에만</b> 저장돼요.
+        </p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#download">Windows용 다운로드</a>
+          <a class="btn ghost" href="#how">사용법 보기</a>
+        </div>
+        <figure class="shot hero-shot">
+          <img src="images/01-gallery.png" alt="갤러리 메인 화면"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="ph">[..이미지삽입] images/01-gallery.png</div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section">
+      <div class="wrap">
+        <h2>주요 기능</h2>
+        <div class="grid feats">
+          <div class="card"><div class="ico">⚡</div><h3>대용량 가상 스크롤</h3><p>수십만 장도 메모리 걱정 없이. 보이는 범위만 로드하고 멀어지면 해제합니다.</p></div>
+          <div class="card"><div class="ico">🔎</div><h3>EXIF 검색</h3><p>카메라·렌즈·ISO·조리개·초점거리·촬영일·형식으로 조건 검색. 갤러리에서 바로 토글.</p></div>
+          <div class="card"><div class="ico">★</div><h3>별점 · 플래그</h3><p>1~5 별점과 채택/탈락 플래그로 빠르게 고르기. 단축키와 일괄 적용 지원.</p></div>
+          <div class="card"><div class="ico">🗓</div><h3>타임라인</h3><p>날짜순 정렬 시 스크롤 위치의 촬영월을 떠다니는 라벨로 표시.</p></div>
+          <div class="card"><div class="ico">🎞</div><h3>동영상 재생</h3><p>자체 플레이어. m2ts 등 비호환 포맷은 자동으로 mp4 변환 후 재생.</p></div>
+          <div class="card"><div class="ico">🖼</div><h3>빠른 크게 보기</h3><p>이웃 사진 미리 로드로 즉시 넘김. 휠 줌·드래그 팬·EXIF 오버레이.</p></div>
+          <div class="card"><div class="ico">✎</div><h3>외부 편집기 연동</h3><p>"수정하기"로 포토샵·영상툴 등 지정 프로그램에서 원본을 바로 엽니다.</p></div>
+          <div class="card"><div class="ico">🗂</div><h3>다중 폴더 라이브러리</h3><p>여러 폴더를 모아 한 화면에. 시작 시 자동 증분 스캔으로 변경분 반영.</p></div>
+          <div class="card"><div class="ico">🔒</div><h3>완전 로컬</h3><p>인덱스는 로컬 SQLite. 외부 서버·전송 없음. 삭제는 휴지통으로 안전하게.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREENSHOTS -->
+    <section id="shots" class="section alt">
+      <div class="wrap">
+        <h2>화면</h2>
+        <p class="muted">아래 이미지는 자리표시입니다. <code>site/images/</code> 폴더에 같은 이름으로 캡처를 넣으면 자동 표시됩니다.</p>
+        <div class="grid shots">
+          <figure class="shot"><img src="images/01-gallery.png" alt="갤러리" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph">[..이미지삽입] images/01-gallery.png</div><figcaption>갤러리 — 가상 스크롤 그리드</figcaption></figure>
+          <figure class="shot"><img src="images/02-search.png" alt="검색" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph">[..이미지삽입] images/02-search.png</div><figcaption>검색 — EXIF 필터 패널</figcaption></figure>
+          <figure class="shot"><img src="images/03-lightbox.png" alt="크게 보기" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph">[..이미지삽입] images/03-lightbox.png</div><figcaption>크게 보기 — 줌·별점·필름스트립</figcaption></figure>
+          <figure class="shot"><img src="images/04-detail.png" alt="상세 정보" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph">[..이미지삽입] images/04-detail.png</div><figcaption>상세 정보 — EXIF·별점·플래그</figcaption></figure>
+          <figure class="shot"><img src="images/05-library.png" alt="라이브러리" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph">[..이미지삽입] images/05-library.png</div><figcaption>라이브러리 — 폴더 관리·스캔</figcaption></figure>
+          <figure class="shot"><img src="images/06-settings.png" alt="설정" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph">[..이미지삽입] images/06-settings.png</div><figcaption>설정 — 편집기·스캔·보기</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW TO -->
+    <section id="how" class="section">
+      <div class="wrap">
+        <h2>사용 방법</h2>
+        <ol class="steps">
+          <li><b>설치 & 실행</b><span>아래에서 설치본을 받아 설치하고 photoKam을 실행합니다.</span></li>
+          <li><b>폴더 추가</b><span>좌측 하단 <em>라이브러리</em>에서 사진/동영상이 있는 폴더를 추가합니다.</span></li>
+          <li><b>스캔</b><span>스캔을 누르면 백그라운드에서 인덱싱·썸네일 생성. 이후엔 시작 시 자동 증분 스캔.</span></li>
+          <li><b>둘러보기 & 검색</b><span><em>갤러리</em>에서 스크롤로 탐색하고, 상단 <em>🔎 검색</em>으로 조건 필터링.</span></li>
+          <li><b>고르기</b><span>사진 선택 후 <kbd>1</kbd>~<kbd>5</kbd> 별점, <kbd>P</kbd> 채택 / <kbd>X</kbd> 탈락. 더블클릭으로 크게 보기.</span></li>
+          <li><b>편집·정리</b><span>크게 보기에서 <em>수정하기</em>로 외부 편집기 실행, <kbd>↻</kbd> 회전, <kbd>Delete</kbd>로 휴지통 삭제.</span></li>
+        </ol>
+        <p class="muted">단축키: <kbd>←</kbd>/<kbd>→</kbd> 이전·다음 · <kbd>0</kbd> 줌 초기화 · <kbd>i</kbd> 정보 · <kbd>Esc</kbd> 닫기</p>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section id="download" class="section alt">
+      <div class="wrap dl">
+        <h2>다운로드</h2>
+        <p class="lead">Windows 10/11 (64-bit)</p>
+        <a class="btn primary lg" id="dlBtn" href="#">photoKam 설치본 받기 (.exe)</a>
+        <p class="muted small">
+          ※ 다운로드 링크는 배포 후 연결됩니다. (GitHub Releases 권장)<br />
+          동영상 기능을 쓰려면 ffmpeg가 필요합니다 — 설정에서 ffmpeg 폴더를 지정하거나 시스템 PATH에 두세요.
+        </p>
+      </div>
+    </section>
+
+    <!-- CHANGELOG -->
+    <section id="changelog" class="section">
+      <div class="wrap">
+        <h2>변경 이력</h2>
+        <p class="muted">전체 이력은 <a href="CHANGELOG.md">CHANGELOG.md</a>에서 관리합니다.</p>
+        <ul class="log">
+          <li><b>v0.4.x</b> — 별점·플래그, 타임라인, 낙관적 삭제, m2ts 변환 재생, 크게 보기 프리로드</li>
+          <li><b>v0.3.x</b> — 갤러리·검색 통합, 시작 시 자동 스캔, UI 정리</li>
+          <li><b>v0.2.x</b> — 무한 스크롤, 회전, 외부 편집기 연동, 자체 동영상 플레이어</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <span>© photoKam — 로컬 전용 사진·동영상 인덱서</span>
+      <a href="https://github.com/Sung-gon/PhotoKamIntro">GitHub</a>
+    </div>
+  </footer>
+</body>
+</html>
