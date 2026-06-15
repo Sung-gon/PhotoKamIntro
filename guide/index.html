@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>photoKam 사용 설명서</title>
+<style>
+  :root{
+    --bg:#0e141b; --panel:#161f29; --panel2:#1b2530; --line:#26333f;
+    --txt:#e8edf3; --dim:#9aa7b8; --muted:#7d8b9c; --accent:#4aa3ff; --accent2:#2a6fb0;
+    --code:#0b1117; --warn:#f0b34a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font-family:-apple-system,"Segoe UI",Roboto,"Noto Sans KR",sans-serif;line-height:1.65;font-size:15px}
+  a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#13202c,transparent)}
+  header .wrap{padding:28px 20px 22px}
+  .logo{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:20px}
+  .logo .pk{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:8px;
+    background:var(--accent2);color:#fff;font-weight:800}
+  header h1{margin:14px 0 4px;font-size:26px}
+  header p{margin:0;color:var(--dim)}
+  nav.toc{position:sticky;top:0;background:rgba(14,20,27,.92);backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);z-index:5}
+  nav.toc .wrap{display:flex;flex-wrap:wrap;gap:6px;padding:10px 20px}
+  nav.toc a{font-size:13px;color:var(--dim);padding:4px 10px;border:1px solid var(--line);border-radius:999px}
+  nav.toc a:hover{color:var(--txt);border-color:var(--accent2);text-decoration:none}
+  main .wrap{padding:8px 20px 60px}
+  section{padding:26px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:20px;margin:0 0 12px;display:flex;align-items:center;gap:8px}
+  h3{font-size:16px;margin:20px 0 6px;color:#dce6f0}
+  p,li{color:#d6dee7}
+  .lead{color:var(--dim)}
+  ul{padding-left:20px;margin:8px 0} li{margin:4px 0}
+  kbd{display:inline-block;min-width:18px;text-align:center;padding:2px 7px;border-radius:6px;
+    background:var(--code);border:1px solid var(--line);border-bottom-width:2px;font-family:ui-monospace,Consolas,monospace;font-size:12px;color:#cfe3ff}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+  th{color:var(--dim);font-weight:600;background:var(--panel2)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:10px 0}
+  .tip{border-left:3px solid var(--accent);background:var(--panel2)}
+  .warn{border-left:3px solid var(--warn);background:#241d10}
+  .muted{color:var(--muted);font-size:13px}
+  code{background:var(--code);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-family:ui-monospace,Consolas,monospace;font-size:13px}
+  footer{color:var(--muted);font-size:13px;padding:26px 0 50px}
+  .lang{float:right;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <span class="lang"><a href="en.html">English</a></span>
+    <div class="logo"><span class="pk">pK</span> photoKam</div>
+    <h1>사용 설명서</h1>
+    <p>내 PC의 사진·동영상을 빠르게 찾고, 고르고, 정리하는 로컬 인덱서</p>
+  </div>
+</header>
+
+<nav class="toc"><div class="wrap">
+  <a href="#start">시작하기</a>
+  <a href="#screens">화면 구성</a>
+  <a href="#search">검색·필터</a>
+  <a href="#select">별점·플래그·선택</a>
+  <a href="#view">크게 보기</a>
+  <a href="#video">동영상</a>
+  <a href="#edit">회전·편집·폴더</a>
+  <a href="#jobs">스캔·Jobs</a>
+  <a href="#settings">설정</a>
+  <a href="#keys">단축키</a>
+  <a href="#faq">FAQ</a>
+</div></nav>
+
+<main><div class="wrap">
+
+<section id="start">
+  <h2>🚀 시작하기</h2>
+  <p class="lead">photoKam은 폴더를 "라이브러리"로 등록해 색인(스캔)한 뒤, 갤러리에서 즉시 탐색합니다. 모든 데이터는 내 PC에만 저장됩니다.</p>
+  <h3>1. 라이브러리 추가</h3>
+  <ul>
+    <li>라이브러리 화면에서 사진/동영상이 든 최상위 폴더를 추가합니다(하위 폴더까지 색인).</li>
+    <li>여러 폴더(예: 외장하드)도 함께 등록할 수 있습니다.</li>
+  </ul>
+  <h3>2. 스캔(색인)</h3>
+  <ul>
+    <li>추가하면 썸네일·EXIF·메타데이터를 색인합니다. 처음 한 번은 양에 따라 시간이 걸립니다.</li>
+    <li>설정에서 <b>시작 시 자동 스캔</b>을 켜면, 앱을 닫은 동안 바뀐 파일을 다음 실행에서 자동 반영합니다.</li>
+  </ul>
+  <div class="card tip">💡 갤러리가 첫 화면입니다. 라이브러리/Jobs/설정은 하단 내비게이션에 있습니다.</div>
+</section>
+
+<section id="screens">
+  <h2>🗂 화면 구성</h2>
+  <ul>
+    <li><b>갤러리</b>: 전체 사진/동영상을 가상 스크롤로 훑습니다(수십만 장도 매끄럽게). 검색은 갤러리 안의 토글 패널입니다.</li>
+    <li><b>크게 보기</b>: 한 장을 크게 보고 줌/팬, 하단 필름스트립으로 앞뒤 이동.</li>
+    <li><b>비교</b>: 2~4장을 나란히(4장=2×2), 줌/팬이 동시 적용.</li>
+    <li><b>상세 패널</b>: 오른쪽 EXIF·파일 정보. 📌 핀으로 고정하면 선택이 풀려도 유지됩니다.</li>
+    <li><b>Jobs</b>: 인덱싱 오류 관리.</li>
+    <li><b>설정</b>: 표시/라이브러리/프로그램 그룹.</li>
+  </ul>
+</section>
+
+<section id="search">
+  <h2>🔎 검색·필터</h2>
+  <p>갤러리 상단의 검색 패널을 토글해 EXIF 기반으로 좁힙니다.</p>
+  <ul>
+    <li><b>카메라·렌즈 다중선택</b>: 콤보박스 안 체크박스로 여러 기종 동시 선택.</li>
+    <li><b>범위</b>: ISO·조리개·초점거리 최소~최대, 촬영일 from~to.</li>
+    <li><b>별점·플래그</b>: 최소 별점, 채택/탈락 필터.</li>
+    <li><b>정렬</b>: 촬영일·파일명·가져온 순·별점.</li>
+    <li>여러 카메라를 함께 검색하면 셀 좌상단에 기종명 컬러 라벨이 표시됩니다.</li>
+    <li>타임라인 라벨이 현재 보이는 영역의 시작~끝 촬영일을 보여줍니다.</li>
+  </ul>
+</section>
+
+<section id="select">
+  <h2>★ 별점·플래그·선택</h2>
+  <ul>
+    <li><b>별점</b> 0~5, <b>플래그</b> 채택(Pick)/탈락(Reject). 셀과 크게 보기에서 매길 수 있습니다.</li>
+    <li>숫자 키로 별점, 단축키로 플래그(아래 단축키 표).</li>
+    <li><b>다중 선택</b>: 클릭, <kbd>Ctrl</kbd>+클릭(추가), <kbd>Shift</kbd>+클릭(범위), 빈 곳 드래그(러버밴드).</li>
+    <li>선택 바에서 비교·회전·휴지통 삭제를 한 번에.</li>
+  </ul>
+  <div class="card tip">💡 삭제는 OS 휴지통으로 보내 복구할 수 있습니다.</div>
+</section>
+
+<section id="view">
+  <h2>🖼 크게 보기</h2>
+  <ul>
+    <li>휠로 확대/축소, 드래그로 이동, 더블클릭으로 맞춤↔확대.</li>
+    <li>하단 필름스트립으로 같은 폴더 사진을 빠르게 넘김(← →).</li>
+    <li><b>과노출(제브라) 경고</b>: ▩ 버튼으로 날아간 흰 영역에 빗금 표시. 버튼 옆에 클리핑 비율(%)이 같이 보입니다.</li>
+  </ul>
+</section>
+
+<section id="video">
+  <h2>🎞 동영상</h2>
+  <ul>
+    <li>mp4/mov/m4v 등은 즉시 재생. 자체 플레이어로 재생/탐색/볼륨/배속/전체화면.</li>
+    <li><b>자동 변환 재생</b>: PCM 오디오 mov, HEVC, avi·m2ts·wmv·3gp 등 웹뷰가 못 푸는 파일은 재생용 mp4로 자동 변환합니다(처음 한 번 "준비 중", 이후 캐시).</li>
+    <li>FFmpeg이 내장되어 별도 설치가 필요 없습니다.</li>
+  </ul>
+  <div class="card warn">⚠️ 일부 mov(올림푸스 등)는 영상은 되지만 오디오가 PCM이라 변환해야 소리가 납니다.</div>
+</section>
+
+<section id="edit">
+  <h2>↻ 회전·편집·폴더 열기</h2>
+  <ul>
+    <li><b>사진 회전</b>: 90° 시계방향, 원본에 반영(EXIF 보존).</li>
+    <li><b>동영상 회전</b>: mp4/mov/m4v/3gp는 무손실(메타데이터), wmv는 재인코딩. 크게 보기/상세에서 미리보기 후 "적용".</li>
+    <li><b>수정하기(✎)</b>: 원본을 외부 편집기(설정에서 지정한 포토샵·영상툴) 또는 OS 기본 프로그램으로 엽니다.</li>
+    <li><b>폴더 열기</b>: 사진/동영상을 <b>우클릭</b> → 폴더 열기(탐색기에서 파일 선택). 크게 보기에서 우클릭해도 됩니다.</li>
+  </ul>
+</section>
+
+<section id="jobs">
+  <h2>🛠 스캔·Jobs</h2>
+  <ul>
+    <li>오류가 나도 전체 스캔은 멈추지 않고, 실패 항목만 Jobs에 기록됩니다.</li>
+    <li><b>오류 항목만 재시도</b> / <b>전체 라이브러리 재스캔</b>.</li>
+    <li>오류 행을 <b>폴더 열기</b>로 확인하거나, <b>선택 삭제 / 전체 삭제</b>로 로그를 정리할 수 있습니다(파일은 그대로).</li>
+  </ul>
+</section>
+
+<section id="settings">
+  <h2>⚙️ 설정</h2>
+  <h3>표시</h3>
+  <ul>
+    <li>테마(다크/라이트), 밀도, 썸네일 크기.</li>
+    <li><b>갤러리 스크롤</b> — <b>미리 그리기 범위</b>(낮음/보통/높음): 낮을수록 빠른 스크롤 시 CPU/GPU 튐과 다른 영상 끊김이 줄어듭니다. <b>부드러운 스크롤 최적화</b>: 화면 밖 썸네일 렌더 생략 + 비동기 디코딩.</li>
+    <li><b>크게 보기</b> 앞뒤 미리 불러오기.</li>
+  </ul>
+  <h3>라이브러리</h3>
+  <ul>
+    <li>시작 시 자동 스캔, 제외 폴더, 인덱싱 동시 작업 수, ffmpeg 폴더, 저장소/캐시 관리.</li>
+  </ul>
+  <h3>프로그램</h3>
+  <ul><li>사진/동영상 편집기 지정, 정보(버전).</li></ul>
+</section>
+
+<section id="keys">
+  <h2>⌨ 단축키</h2>
+  <table>
+    <tr><th>키</th><th>동작</th></tr>
+    <tr><td><kbd>1</kbd>~<kbd>5</kbd></td><td>별점 1~5</td></tr>
+    <tr><td><kbd>0</kbd></td><td>별점 해제</td></tr>
+    <tr><td><kbd>P</kbd></td><td>채택(Pick)</td></tr>
+    <tr><td><kbd>X</kbd></td><td>탈락(Reject)</td></tr>
+    <tr><td><kbd>U</kbd></td><td>플래그 해제</td></tr>
+    <tr><td><kbd>Delete</kbd></td><td>휴지통으로 삭제</td></tr>
+    <tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>크게 보기에서 이전/다음</td></tr>
+    <tr><td><kbd>Esc</kbd></td><td>크게 보기/모달 닫기</td></tr>
+    <tr><td>마우스 우클릭</td><td>폴더 열기 등 메뉴</td></tr>
+  </table>
+  <p class="muted">단축키는 버전에 따라 추가될 수 있습니다. (전체 단축키 시트는 추후 앱 내 <kbd>?</kbd>로 제공 예정)</p>
+</section>
+
+<section id="faq">
+  <h2>❓ 자주 묻는 질문</h2>
+  <h3>동영상이 안 보여요</h3>
+  <p>mp4/mov는 보통 바로 재생됩니다. avi·m2ts·wmv 등이나 PCM 오디오 mov는 처음 열 때 변환이 필요해 잠깐 "준비 중"이 뜬 뒤 재생됩니다. 변환본은 캐시되어 다음부터 빠릅니다.</p>
+  <h3>mov는 화면은 나오는데 소리가 없어요</h3>
+  <p>해당 mov의 오디오가 PCM이라 웹뷰가 직접 못 풉니다. 변환이 끝나면 소리까지 정상 재생됩니다.</p>
+  <h3>스크롤하면 다른 프로그램(유튜브 등)이 잠깐 끊겨요</h3>
+  <p>스크롤 순간 썸네일 디코드/합성으로 GPU·CPU를 짧게 많이 씁니다. 설정 &gt; 표시 &gt; 갤러리 스크롤에서 <b>미리 그리기 범위=낮음</b>으로 줄이면 완화됩니다.</p>
+  <h3>내 데이터는 어디로 가나요</h3>
+  <p>어디로도 가지 않습니다. 색인·캐시·원본 모두 내 PC에만 있고, 외부 전송이 없습니다.</p>
+</section>
+
+</div></main>
+
+<footer><div class="wrap">
+  © 2026 ExaPeak Soft Solutions · photoKam — 로컬 사진·동영상 인덱서.
+  개인 비상업적 용도 무료. 번들 FFmpeg은 GPLv3(별도 실행파일).
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>photoKam User Guide</title>
+<style>
+  :root{
+    --bg:#0e141b; --panel:#161f29; --panel2:#1b2530; --line:#26333f;
+    --txt:#e8edf3; --dim:#9aa7b8; --muted:#7d8b9c; --accent:#4aa3ff; --accent2:#2a6fb0;
+    --code:#0b1117; --warn:#f0b34a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font-family:-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.65;font-size:15px}
+  a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#13202c,transparent)}
+  header .wrap{padding:28px 20px 22px}
+  .logo{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:20px}
+  .logo .pk{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:8px;
+    background:var(--accent2);color:#fff;font-weight:800}
+  header h1{margin:14px 0 4px;font-size:26px}
+  header p{margin:0;color:var(--dim)}
+  nav.toc{position:sticky;top:0;background:rgba(14,20,27,.92);backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);z-index:5}
+  nav.toc .wrap{display:flex;flex-wrap:wrap;gap:6px;padding:10px 20px}
+  nav.toc a{font-size:13px;color:var(--dim);padding:4px 10px;border:1px solid var(--line);border-radius:999px}
+  nav.toc a:hover{color:var(--txt);border-color:var(--accent2);text-decoration:none}
+  main .wrap{padding:8px 20px 60px}
+  section{padding:26px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:20px;margin:0 0 12px;display:flex;align-items:center;gap:8px}
+  h3{font-size:16px;margin:20px 0 6px;color:#dce6f0}
+  p,li{color:#d6dee7}
+  .lead{color:var(--dim)}
+  ul{padding-left:20px;margin:8px 0} li{margin:4px 0}
+  kbd{display:inline-block;min-width:18px;text-align:center;padding:2px 7px;border-radius:6px;
+    background:var(--code);border:1px solid var(--line);border-bottom-width:2px;font-family:ui-monospace,Consolas,monospace;font-size:12px;color:#cfe3ff}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+  th{color:var(--dim);font-weight:600;background:var(--panel2)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:10px 0}
+  .tip{border-left:3px solid var(--accent);background:var(--panel2)}
+  .warn{border-left:3px solid var(--warn);background:#241d10}
+  .muted{color:var(--muted);font-size:13px}
+  code{background:var(--code);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-family:ui-monospace,Consolas,monospace;font-size:13px}
+  footer{color:var(--muted);font-size:13px;padding:26px 0 50px}
+  .lang{float:right;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <span class="lang"><a href="index.html">한국어</a></span>
+    <div class="logo"><span class="pk">pK</span> photoKam</div>
+    <h1>User Guide</h1>
+    <p>A local indexer to quickly find, cull, and view the photos & videos on your PC</p>
+  </div>
+</header>
+
+<nav class="toc"><div class="wrap">
+  <a href="#start">Getting started</a>
+  <a href="#screens">Screens</a>
+  <a href="#search">Search</a>
+  <a href="#select">Rate & select</a>
+  <a href="#view">Full view</a>
+  <a href="#video">Video</a>
+  <a href="#edit">Rotate & edit</a>
+  <a href="#jobs">Scan & Jobs</a>
+  <a href="#settings">Settings</a>
+  <a href="#keys">Shortcuts</a>
+  <a href="#faq">FAQ</a>
+</div></nav>
+
+<main><div class="wrap">
+
+<section id="start">
+  <h2>🚀 Getting started</h2>
+  <p class="lead">photoKam registers folders as a "library", indexes (scans) them, and lets you browse instantly. All data stays only on your PC.</p>
+  <h3>1. Add a library</h3>
+  <ul>
+    <li>On the Library screen, add a top folder containing your photos/videos (subfolders are indexed too).</li>
+    <li>You can register multiple folders (e.g., external drives).</li>
+  </ul>
+  <h3>2. Scan (index)</h3>
+  <ul>
+    <li>photoKam indexes thumbnails, EXIF, and metadata. The first scan may take a while depending on volume.</li>
+    <li>Enable <b>Auto-scan on startup</b> in Settings to reflect files changed while the app was closed.</li>
+  </ul>
+  <div class="card tip">💡 The Gallery is the first screen. Library / Jobs / Settings are in the bottom navigation.</div>
+</section>
+
+<section id="screens">
+  <h2>🗂 Screens</h2>
+  <ul>
+    <li><b>Gallery</b>: browse everything via virtualized scroll (smooth even at hundreds of thousands). Search is a toggle panel inside the Gallery.</li>
+    <li><b>Full view</b>: view one item large with zoom/pan and a bottom filmstrip.</li>
+    <li><b>Compare</b>: 2–4 side by side (2×2 for four) with synchronized zoom/pan.</li>
+    <li><b>Detail panel</b>: EXIF & file info on the right. 📌 Pin it to keep it even when selection is cleared.</li>
+    <li><b>Jobs</b>: indexing error management.</li>
+    <li><b>Settings</b>: grouped into Display / Library / App.</li>
+  </ul>
+</section>
+
+<section id="search">
+  <h2>🔎 Search & filter</h2>
+  <p>Toggle the search panel at the top of the Gallery to narrow by EXIF.</p>
+  <ul>
+    <li><b>Multi-select cameras & lenses</b> via checkboxes inside a combobox.</li>
+    <li><b>Ranges</b>: ISO, aperture, focal length (min–max) and capture date (from–to).</li>
+    <li><b>Rating & flag</b>: minimum stars, pick/reject filter.</li>
+    <li><b>Sort</b>: capture date, filename, import order, rating.</li>
+    <li>When multiple cameras are searched, cells show a colored camera label.</li>
+    <li>The timeline label shows the start–end capture dates of the visible range.</li>
+  </ul>
+</section>
+
+<section id="select">
+  <h2>★ Rate, flag & select</h2>
+  <ul>
+    <li><b>Ratings</b> 0–5 and <b>flags</b> Pick/Reject, set on cells or in full view.</li>
+    <li>Number keys for ratings; shortcuts for flags (see table below).</li>
+    <li><b>Multi-select</b>: click, <kbd>Ctrl</kbd>+click (add), <kbd>Shift</kbd>+click (range), drag on empty space (rubber-band).</li>
+    <li>Use the selection bar to compare, rotate, or move to Recycle Bin at once.</li>
+  </ul>
+  <div class="card tip">💡 Deletion goes to the OS Recycle Bin, so it's recoverable.</div>
+</section>
+
+<section id="view">
+  <h2>🖼 Full view</h2>
+  <ul>
+    <li>Wheel to zoom, drag to pan, double-click to fit↔zoom.</li>
+    <li>The bottom filmstrip flips through the same folder (← →).</li>
+    <li><b>Overexposure (zebra) warning</b>: the ▩ button stripes blown-out highlights; the clipped pixel percentage is shown next to it.</li>
+  </ul>
+</section>
+
+<section id="video">
+  <h2>🎞 Video</h2>
+  <ul>
+    <li>mp4/mov/m4v play instantly. Built-in player: play/seek/volume/speed/fullscreen.</li>
+    <li><b>Automatic conversion</b>: files the webview can't decode (PCM-audio mov, HEVC, avi/m2ts/wmv/3gp) are converted to a playable mp4 ("Preparing…" once, then cached).</li>
+    <li>FFmpeg is bundled — no separate install needed.</li>
+  </ul>
+  <div class="card warn">⚠️ Some mov files (e.g., Olympus) play video but have PCM audio, so they need conversion for sound.</div>
+</section>
+
+<section id="edit">
+  <h2>↻ Rotate, edit & open folder</h2>
+  <ul>
+    <li><b>Photo rotation</b>: 90° clockwise, applied to the original (EXIF preserved).</li>
+    <li><b>Video rotation</b>: lossless (metadata) for mp4/mov/m4v/3gp; re-encode for wmv. Preview then "Apply" in full view / detail.</li>
+    <li><b>Edit (✎)</b>: open the original in an external editor (Photoshop / video tool set in Settings) or the OS default app.</li>
+    <li><b>Open folder</b>: <b>right-click</b> a photo/video → Open folder (selects the file in the file explorer). Works in full view too.</li>
+  </ul>
+</section>
+
+<section id="jobs">
+  <h2>🛠 Scan & Jobs</h2>
+  <ul>
+    <li>Errors don't stop the overall scan; failed items are logged in Jobs.</li>
+    <li><b>Retry errors only</b> / <b>Rescan entire library</b>.</li>
+    <li>From an error row you can <b>Open folder</b>, or <b>Delete selected / Delete all</b> to clear the log (files are untouched).</li>
+  </ul>
+</section>
+
+<section id="settings">
+  <h2>⚙️ Settings</h2>
+  <h3>Display</h3>
+  <ul>
+    <li>Theme (dark/light), density, thumbnail size.</li>
+    <li><b>Gallery scroll</b> — <b>Overscan range</b> (Low/Med/High): lower reduces CPU/GPU spikes and stutter in other apps while scrolling. <b>Smooth scroll optimization</b>: skip offscreen thumbnail rendering + async decode.</li>
+    <li><b>Full view</b> preloading.</li>
+  </ul>
+  <h3>Library</h3>
+  <ul>
+    <li>Auto-scan on startup, exclude folders, indexing concurrency, ffmpeg folder, storage/cache management.</li>
+  </ul>
+  <h3>App</h3>
+  <ul><li>Photo/video editors, About (version).</li></ul>
+</section>
+
+<section id="keys">
+  <h2>⌨ Shortcuts</h2>
+  <table>
+    <tr><th>Key</th><th>Action</th></tr>
+    <tr><td><kbd>1</kbd>–<kbd>5</kbd></td><td>Rating 1–5</td></tr>
+    <tr><td><kbd>0</kbd></td><td>Clear rating</td></tr>
+    <tr><td><kbd>P</kbd></td><td>Pick</td></tr>
+    <tr><td><kbd>X</kbd></td><td>Reject</td></tr>
+    <tr><td><kbd>U</kbd></td><td>Clear flag</td></tr>
+    <tr><td><kbd>Delete</kbd></td><td>Move to Recycle Bin</td></tr>
+    <tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>Prev/next in full view</td></tr>
+    <tr><td><kbd>Esc</kbd></td><td>Close full view / modal</td></tr>
+    <tr><td>Right-click</td><td>Open folder & menu</td></tr>
+  </table>
+  <p class="muted">Shortcuts may expand by version. (A full in-app shortcut sheet via <kbd>?</kbd> is planned.)</p>
+</section>
+
+<section id="faq">
+  <h2>❓ FAQ</h2>
+  <h3>A video won't play</h3>
+  <p>mp4/mov usually play directly. avi/m2ts/wmv and PCM-audio mov need conversion on first open, showing "Preparing…" briefly. The converted copy is cached for next time.</p>
+  <h3>mov shows video but no sound</h3>
+  <p>That mov has PCM audio the webview can't decode directly. Once conversion finishes, sound plays normally.</p>
+  <h3>Other apps (e.g., YouTube) stutter while I scroll</h3>
+  <p>Scrolling briefly uses a lot of GPU/CPU for thumbnail decode/compositing. Lower <b>Overscan range</b> to Low in Settings &gt; Display &gt; Gallery scroll to ease it.</p>
+  <h3>Where does my data go</h3>
+  <p>Nowhere. The index, cache, and originals all stay on your PC, with no external transmission.</p>
+</section>
+
+</div></main>
+
+<footer><div class="wrap">
+  © 2026 ExaPeak Soft Solutions · photoKam — local photo & video indexer.
+  Free for personal, non-commercial use. Bundled FFmpeg is GPLv3 (separate executable).
+</div></footer>
+</body>
+</html>
