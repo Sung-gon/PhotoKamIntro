@@ -46,6 +46,14 @@
   code{background:var(--code);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-family:ui-monospace,Consolas,monospace;font-size:13px}
   footer{color:var(--muted);font-size:13px;padding:26px 0 50px}
   .lang{float:right;font-size:13px}
+  /* Screenshot slots. Drop a file into images/ and the picture shows automatically; the note box disappears. */
+  figure.shot{margin:16px 0}
+  figure.shot img{max-width:100%;border:1px solid var(--line);border-radius:8px;display:block}
+  .shot-ph{display:none;background:var(--panel2);border:1.5px dashed var(--accent2);border-radius:8px;
+    padding:14px 16px;color:var(--dim);font-size:13px;line-height:1.75}
+  .shot-ph b{color:#cfe3ff}
+  .shot-ph .tag{display:inline-block;background:var(--accent2);color:#fff;border-radius:5px;padding:1px 7px;font-size:11px;font-weight:700;margin-right:6px}
+  figure.shot figcaption{color:var(--muted);font-size:12px;margin-top:6px}
 </style>
 </head>
 <body>
@@ -82,6 +90,13 @@
     <li>On the Library screen, add a top folder containing your photos/videos (subfolders are indexed too).</li>
     <li>You can register multiple folders (e.g., external drives).</li>
   </ul>
+  <figure class="shot">
+    <img src="images/01-add-library.png" alt="Add library" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <div class="shot-ph"><span class="tag">IMAGE</span><b>images/01-add-library.png</b><br>
+      <b>Capture:</b> Library screen (window region) · <b>Highlight:</b> an <b>arrow</b> on the "Add folder" button ·
+      <b>State:</b> with 1–2 folders registered</div>
+    <figcaption>Adding a folder to the library</figcaption>
+  </figure>
   <h3>2. Scan (index)</h3>
   <ul>
     <li>photoKam indexes thumbnails, EXIF, and metadata. The first scan may take a while depending on volume.</li>
@@ -92,6 +107,13 @@
 
 <section id="screens">
   <h2>🗂 Screens</h2>
+  <figure class="shot">
+    <img src="images/02-gallery-overview.png" alt="Gallery screen" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <div class="shot-ph"><span class="tag">IMAGE</span><b>images/02-gallery-overview.png</b><br>
+      <b>Capture:</b> Gallery <b>full screen</b> · <b>Highlight:</b> 3 numbered callouts — ① top bar (theme/shortcuts/about), ② left nav (Gallery·Library·Jobs·Settings), ③ thumbnail grid ·
+      <b>State:</b> grid filled with photos</div>
+    <figcaption>Main areas of the Gallery</figcaption>
+  </figure>
   <ul>
     <li><b>Gallery</b>: browse everything via virtualized scroll (smooth even at hundreds of thousands). Search is a toggle panel inside the Gallery.</li>
     <li><b>Full view</b>: view one item large with zoom/pan and a bottom filmstrip.</li>
@@ -105,11 +127,18 @@
 <section id="search">
   <h2>🔎 Search & filter</h2>
   <p>Toggle the search panel at the top of the Gallery to narrow by EXIF.</p>
+  <figure class="shot">
+    <img src="images/03-search-panel.png" alt="Search panel" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <div class="shot-ph"><span class="tag">IMAGE</span><b>images/03-search-panel.png</b><br>
+      <b>Capture:</b> the opened search panel (window region) · <b>Highlight:</b> a <b>box</b> around the camera multi-select dropdown (checkboxes) ·
+      <b>State:</b> 2–3 cameras checked</div>
+    <figcaption>Camera/lens multi-select and range filters</figcaption>
+  </figure>
   <ul>
     <li><b>Multi-select cameras & lenses</b> via checkboxes inside a combobox.</li>
     <li><b>Ranges</b>: ISO, aperture, focal length (min–max) and capture date (from–to).</li>
     <li><b>Rating & flag</b>: minimum stars, pick/reject filter.</li>
-    <li><b>Sort</b>: capture date, filename, import order, rating.</li>
+    <li><b>Sort</b>: capture date, filename (natural sort), import order, rating.</li>
     <li>When multiple cameras are searched, cells show a colored camera label.</li>
     <li>The timeline label shows the start–end capture dates of the visible range.</li>
   </ul>
@@ -117,9 +146,16 @@
 
 <section id="select">
   <h2>★ Rate, flag & select</h2>
+  <figure class="shot">
+    <img src="images/04-rating-flag.png" alt="Rating and flag" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <div class="shot-ph"><span class="tag">IMAGE</span><b>images/04-rating-flag.png</b><br>
+      <b>Capture:</b> just 2–3 thumbnail cells (<b>element close-up</b>) · <b>Highlight:</b> <b>arrows</b> to the star badge and the pick/reject badge ·
+      <b>State:</b> cells with ratings/flags set</div>
+    <figcaption>Rating & flag badges shown on cells</figcaption>
+  </figure>
   <ul>
     <li><b>Ratings</b> 0–5 and <b>flags</b> Pick/Reject, set on cells or in full view.</li>
-    <li>Number keys for ratings; shortcuts for flags (see table below).</li>
+    <li>Number keys for ratings; shortcuts for flags (press <kbd>?</kbd> for all shortcuts).</li>
     <li><b>Multi-select</b>: click, <kbd>Ctrl</kbd>+click (add), <kbd>Shift</kbd>+click (range), drag on empty space (rubber-band).</li>
     <li>Use the selection bar to compare, rotate, or move to Recycle Bin at once.</li>
   </ul>
@@ -128,35 +164,72 @@
 
 <section id="view">
   <h2>🖼 Full view</h2>
+  <figure class="shot">
+    <img src="images/05-lightbox.png" alt="Full view" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <div class="shot-ph"><span class="tag">IMAGE</span><b>images/05-lightbox.png</b><br>
+      <b>Capture:</b> full-view <b>full screen</b> · <b>Highlight:</b> 3 callouts — ① top toolbar (overexposure/rotate/info/close), ② bottom-right zoom navigator (minimap), ③ bottom filmstrip ·
+      <b>State:</b> slightly zoomed in so the minimap is visible</div>
+    <figcaption>Full-view layout</figcaption>
+  </figure>
   <ul>
     <li>Wheel to zoom, drag to pan, double-click to fit↔zoom.</li>
+    <li>When zoomed, a <b>zoom navigator (minimap)</b> appears at the bottom-right showing the visible area; click/drag to move.</li>
     <li>The bottom filmstrip flips through the same folder (← →).</li>
     <li><b>Overexposure (zebra) warning</b>: the ▩ button stripes blown-out highlights; the clipped pixel percentage is shown next to it.</li>
   </ul>
+  <figure class="shot">
+    <img src="images/06-zebra.png" alt="Overexposure zebra" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <div class="shot-ph"><span class="tag">IMAGE</span><b>images/06-zebra.png</b><br>
+      <b>Capture:</b> a photo with zebra applied (window region) · <b>Highlight:</b> <b>arrows</b> to the striped area and to the "%" next to the ▩ button ·
+      <b>State:</b> a photo with bright/blown areas, ▩ turned on</div>
+    <figcaption>Overexposure (clipping) stripes and percentage</figcaption>
+  </figure>
 </section>
 
 <section id="video">
   <h2>🎞 Video</h2>
+  <figure class="shot">
+    <img src="images/07-video-player.png" alt="Video player" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <div class="shot-ph"><span class="tag">IMAGE</span><b>images/07-video-player.png</b><br>
+      <b>Capture:</b> a playing video (window region) · <b>Highlight:</b> a <b>box</b> around the bottom control bar (play/seek/volume/speed/fullscreen) ·
+      <b>State:</b> control bar visible</div>
+    <figcaption>Built-in video player</figcaption>
+  </figure>
   <ul>
-    <li>mp4/mov/m4v play instantly. Built-in player: play/seek/volume/speed/fullscreen.</li>
-    <li><b>Automatic conversion</b>: files the webview can't decode (PCM-audio mov, HEVC, avi/m2ts/wmv/3gp) are converted to a playable mp4 ("Preparing…" once, then cached).</li>
-    <li>FFmpeg is bundled — no separate install needed.</li>
+    <li>mp4/mov/m4v play instantly, with play/seek/volume/speed/fullscreen.</li>
+    <li><b>Automatic conversion</b>: some non-standard formats (avi/m2ts/wmv/3gp) or unusual files are converted automatically for playback ("Preparing…" once, then fast afterward).</li>
+    <li>No extra software install is needed to play a wide range of formats.</li>
   </ul>
-  <div class="card warn">⚠️ Some mov files (e.g., Olympus) play video but have PCM audio, so they need conversion for sound.</div>
+  <div class="card warn">⚠️ Some videos (e.g., certain cameras' mov files) show the picture right away, but sound starts once conversion completes.</div>
 </section>
 
 <section id="edit">
   <h2>↻ Rotate, edit & open folder</h2>
+  <figure class="shot">
+    <img src="images/08-context-menu.png" alt="Right-click menu" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <div class="shot-ph"><span class="tag">IMAGE</span><b>images/08-context-menu.png</b><br>
+      <b>Capture:</b> the right-click context menu (<b>element</b>) · <b>Highlight:</b> a <b>box</b> around the menu items (Open folder / Full view / Rename / Edit) ·
+      <b>State:</b> right-clicked on a thumbnail</div>
+    <figcaption>Right-click menu for a photo/video</figcaption>
+  </figure>
   <ul>
     <li><b>Photo rotation</b>: 90° clockwise, applied to the original (EXIF preserved).</li>
     <li><b>Video rotation</b>: lossless (metadata) for mp4/mov/m4v/3gp; re-encode for wmv. Preview then "Apply" in full view / detail.</li>
-    <li><b>Edit (✎)</b>: open the original in an external editor (Photoshop / video tool set in Settings) or the OS default app.</li>
-    <li><b>Open folder</b>: <b>right-click</b> a photo/video → Open folder (selects the file in the file explorer). Works in full view too.</li>
+    <li><b>Rename</b>: right-click → "Rename" (omit the extension to keep the original one).</li>
+    <li><b>Edit (✎)</b>: open the original in an external editor (set in Settings) or the OS default app.</li>
+    <li><b>Open folder</b>: right-click → Open folder (selects the file in the file explorer). Works in full view too.</li>
   </ul>
 </section>
 
 <section id="jobs">
   <h2>🛠 Scan & Jobs</h2>
+  <figure class="shot">
+    <img src="images/09-jobs.png" alt="Jobs screen" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <div class="shot-ph"><span class="tag">IMAGE</span><b>images/09-jobs.png</b><br>
+      <b>Capture:</b> Jobs screen (window region) · <b>Highlight:</b> <b>arrows</b> to the top buttons (Retry errors / Rescan / Delete selected·all) and the "Folder" button on an error row ·
+      <b>State:</b> a few errors present (optional)</div>
+    <figcaption>Indexing error management (Jobs)</figcaption>
+  </figure>
   <ul>
     <li>Errors don't stop the overall scan; failed items are logged in Jobs.</li>
     <li><b>Retry errors only</b> / <b>Rescan entire library</b>.</li>
@@ -166,10 +239,17 @@
 
 <section id="settings">
   <h2>⚙️ Settings</h2>
+  <figure class="shot">
+    <img src="images/10-settings.png" alt="Settings screen" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <div class="shot-ph"><span class="tag">IMAGE</span><b>images/10-settings.png</b><br>
+      <b>Capture:</b> Settings screen (window region) · <b>Highlight:</b> a <b>box</b> around the search field and the "Gallery scroll" section (overscan range) ·
+      <b>State:</b> top of the Display group</div>
+    <figcaption>Settings — search field and gallery scroll options</figcaption>
+  </figure>
   <h3>Display</h3>
   <ul>
     <li>Theme (dark/light), density, thumbnail size.</li>
-    <li><b>Gallery scroll</b> — <b>Overscan range</b> (Low/Med/High): lower reduces CPU/GPU spikes and stutter in other apps while scrolling. <b>Smooth scroll optimization</b>: skip offscreen thumbnail rendering + async decode.</li>
+    <li><b>Gallery scroll</b> — <b>Overscan range</b> (Low/Med/High): lower uses fewer resources while scrolling fast, reducing stutter in other apps (e.g., video playback). <b>Smooth scroll optimization</b>: reduces offscreen thumbnail work for smoother scrolling.</li>
     <li><b>Full view</b> preloading.</li>
   </ul>
   <h3>Library</h3>
@@ -182,6 +262,14 @@
 
 <section id="keys">
   <h2>⌨ Shortcuts</h2>
+  <p>Press <kbd>?</kbd> (or the top-bar ⌨ button) to open the full shortcut sheet anytime.</p>
+  <figure class="shot">
+    <img src="images/11-shortcuts.png" alt="Shortcut sheet" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <div class="shot-ph"><span class="tag">IMAGE</span><b>images/11-shortcuts.png</b><br>
+      <b>Capture:</b> the shortcut sheet opened with <kbd>?</kbd> (<b>element</b>: the modal only) · <b>Highlight:</b> none ·
+      <b>State:</b> modal open</div>
+    <figcaption>Shortcut help sheet</figcaption>
+  </figure>
   <table>
     <tr><th>Key</th><th>Action</th></tr>
     <tr><td><kbd>1</kbd>–<kbd>5</kbd></td><td>Rating 1–5</td></tr>
@@ -191,20 +279,20 @@
     <tr><td><kbd>U</kbd></td><td>Clear flag</td></tr>
     <tr><td><kbd>Delete</kbd></td><td>Move to Recycle Bin</td></tr>
     <tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>Prev/next in full view</td></tr>
+    <tr><td><kbd>?</kbd></td><td>Open/close shortcut sheet</td></tr>
     <tr><td><kbd>Esc</kbd></td><td>Close full view / modal</td></tr>
-    <tr><td>Right-click</td><td>Open folder & menu</td></tr>
+    <tr><td>Right-click</td><td>Open folder, rename, & more</td></tr>
   </table>
-  <p class="muted">Shortcuts may expand by version. (A full in-app shortcut sheet via <kbd>?</kbd> is planned.)</p>
 </section>
 
 <section id="faq">
   <h2>❓ FAQ</h2>
   <h3>A video won't play</h3>
-  <p>mp4/mov usually play directly. avi/m2ts/wmv and PCM-audio mov need conversion on first open, showing "Preparing…" briefly. The converted copy is cached for next time.</p>
-  <h3>mov shows video but no sound</h3>
-  <p>That mov has PCM audio the webview can't decode directly. Once conversion finishes, sound plays normally.</p>
+  <p>mp4/mov usually play directly. Some formats (avi/m2ts/wmv, etc.) need conversion on first open, showing "Preparing…" briefly, then play fast next time.</p>
+  <h3>A video shows the picture but no sound</h3>
+  <p>Its sound format differs from the standard, so it doesn't play immediately. Once conversion finishes, sound plays normally.</p>
   <h3>Other apps (e.g., YouTube) stutter while I scroll</h3>
-  <p>Scrolling briefly uses a lot of GPU/CPU for thumbnail decode/compositing. Lower <b>Overscan range</b> to Low in Settings &gt; Display &gt; Gallery scroll to ease it.</p>
+  <p>Scrolling fast briefly uses a lot of computer resources to process many thumbnails. Lower <b>Overscan range</b> to Low in Settings &gt; Display &gt; Gallery scroll to ease it.</p>
   <h3>Where does my data go</h3>
   <p>Nowhere. The index, cache, and originals all stay on your PC, with no external transmission.</p>
 </section>
@@ -213,7 +301,7 @@
 
 <footer><div class="wrap">
   © 2026 ExaPeak Soft Solutions · photoKam — local photo & video indexer.
-  Free for personal, non-commercial use. Bundled FFmpeg is GPLv3 (separate executable).
+  Free for personal, non-commercial use. See THIRD-PARTY-NOTICES.txt in the install folder for open-source license notices.
 </div></footer>
 </body>
 </html>
